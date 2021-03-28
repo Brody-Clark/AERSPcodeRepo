@@ -10,12 +10,10 @@ void matrixmultiply(double[][col], double[][col], double[][col], int);
 void conversion(double[], int, double[][col], double[]);
 void transpose(double[][col], double[][col], int);
 void crossproduct(double a[], double b[], double result[], int row);
-double magnitude1(double a[], int row);
+double magnitude(double a[], int row);
 void normalize(double a[], double mag, double result[], int row);
-void magnitude2(double a[], int row, double result);
 void vectorsub(double a[], double b[], double result[], int row);
-void dotproduct(double a[], double b[], double result, int row);
-double dotproduct2(double a[], double b[], int row);
+double dotproduct(double a[], double b[], int row);
 
 int main()
 {
@@ -64,7 +62,7 @@ void transpose(double c[][col], double cT[][col], int row)	//transposes a matrix
 
 
 }
-double magnitude1(double a[], int row)	//magnitude of  a vector that doesnt need to be used more than once
+double magnitude(double a[], int row)	//magnitude of  a vector that doesnt need to be used more than once
 {
 	double result = 0;
 	double argument = 0;
@@ -73,15 +71,7 @@ double magnitude1(double a[], int row)	//magnitude of  a vector that doesnt need
 	result = pow(argument, 0.5);
 	return result;
 }
-void magnitude2(double a[], int row, double result)	//magnitude of  a vector for quantity that is used repeatedly
-{
 
-	double argument = 0;
-	for (int i = 0; i < row; i++)
-		argument += pow(a[i], 2);
-	result = pow(argument, 0.5);
-
-}
 void crossproduct(double a[], double b[], double result[], int row)
 {
 	result[0] = a[1] * b[2] - a[2] * b[1];
@@ -90,15 +80,8 @@ void crossproduct(double a[], double b[], double result[], int row)
 
 
 }
-void dotproduct(double a[], double b[], double result, int row)
-{
-	for (int i = 0; i < row; i++)
-		result += a[i] * b[i];
 
-
-
-}
-double dotproduct2(double a[], double b[], int row)
+double dotproduct(double a[], double b[], int row)
 {
 	double result = 0;
 	for (int i = 0; i < row; i++)
