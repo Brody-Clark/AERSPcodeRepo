@@ -5,6 +5,8 @@
 #include <cmath>
 using namespace std;
 
+const int row = 3, col = 3;	//using arrays with predefined row and column as 3. matrices will always be 3x3, vectors will always be 3x1
+
 
 void rotationX(double, double[][col], int);
 void rotationZ(double, double[][col], int);
@@ -13,7 +15,6 @@ void matrixmultiply(double[][col], double[][col], double[][col], int);
 void conversion(double[], int, double[][col], double[]);
 
 
-int row = 3, col = 3;	//using arrays with predefined row and column as 3. matrices will always be 3x3, vectors will always be 3x1
 
 int main()
 {
